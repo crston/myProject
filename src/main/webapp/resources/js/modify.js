@@ -7,6 +7,10 @@ send.addEventListener("click", function () {
   var email = document.getElementById("userEmail");
   var name = document.getElementById("userName");
   var namecheck = $("#userName").val();
+  var idlength = $("#userId").val();
+  var emaillength = $("#userEmail").val();
+  var namelength = $("#userName").val();
+
 
   if (pw.value.trim() == "") {
     alert("비밀번호를 입력하세요");
@@ -35,6 +39,21 @@ send.addEventListener("click", function () {
   }
   if (name.value.trim() == "") {
     alert("닉네임을 입력하세요");
+	name.focus();
+    return false;
+  }
+  if (idlength.length > 16){
+    alert("아이디는 16 글자를 초과할 수 없습니다");
+	id.focus();
+    return false;
+  }
+  if (emaillength.length > 32){
+    alert("이메일은 32 글자를 초과할 수 없습니다");
+	email.focus();
+    return false;
+  }
+  if (namelength.length > 16){
+    alert("닉네임은 16 글자를 초과할 수 없습니다");
 	name.focus();
     return false;
   }
